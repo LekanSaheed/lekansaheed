@@ -1,0 +1,120 @@
+.header_container{
+    background-color: white;
+    padding: 20px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.logo{
+    color: rgb(22, 21, 21);
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: bolder;
+}
+.total{
+    color: black;
+    font-weight: bolder;
+    margin-left: -7px;
+    margin-top: -7px;
+    font-size: 14px;
+}
+.header_right{
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    display: flex;
+
+}
+.bi-list{
+    font-size: 24px;
+}
+
+.cart{
+    display: flex;
+    margin-right: 10px;
+}
+a{
+    text-decoration: none;
+}
+a .cart{
+    color: black;
+    text-decoration: none;
+}
+
+.products{
+    margin: 10px;
+    padding: 20px;
+}
+.search_fluid{
+    padding: 10px;
+}
+.search_container{
+    width: auto;
+    border-radius: 50px;
+    border: solid 1px rgb(173, 173, 173);
+    padding: 2px;
+    padding-left: 12px;
+    margin: auto;
+    background-color: white;
+}
+.bi-search{
+    font-size: 18px;
+}
+.search{
+    width: 80%;
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+.product_container{
+    display: flex;
+    overflow-x: scroll;
+    background-color: white;
+    margin: 6px;
+    padding: 10px;
+}
+.category_container{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    background-color: white;
+    padding-top:15px ;
+    padding-bottom: 15px;
+    margin: 6px;
+}
+.btn-to-cart{
+    color: teal;
+}
+.category_container .bi{
+
+    border-radius: 100%;
+    padding: 18px;
+    color: white;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.bi-earbuds{
+    background-color: rgb(247, 164, 11);
+}
+.bi-phone-fill{
+    background-color: rgb(31, 175, 12);
+}
+.bi-headset-vr{
+    background-color: rgb(223, 0, 67);
+}
+.bi-window-dock{
+    background-color: rgb(102, 29, 170);
+}
+.category_node{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.category_title{
+    color: rgb(26, 25, 25);
+    font-size: 13px;
+}
