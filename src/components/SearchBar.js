@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './Search.css'
+
 const SearchBar = () => {
     return (
         <div className='search_fluid'>

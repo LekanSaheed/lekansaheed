@@ -1,0 +1,97 @@
+.products{
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color:white ;
+}
+.product_container{
+    display: grid;
+    grid-template-rows: minmax(150px, 1fr);
+    grid-template-columns: repeat(1000, calc(50% - 40px));
+    overflow-x: scroll;
+    margin: 6px;
+    padding: 5px;
+    box-shadow: 0px 0px 3px 2px rgba(223, 222, 222, 0.521);
+}
+.category_container{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    background-color: white;
+    padding-top:15px ;
+    padding-bottom: 15px;
+    margin: 6px;
+    box-shadow: 0px 0px 3px 2px rgba(223, 222, 222, 0.521);
+}
+.btn-to-cart{
+    color: teal;
+}
+.category_container .bi{
+
+    border-radius: 100%;
+    padding: 18px;
+    color: white;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.earbuds{
+    background-color: rgb(247, 164, 11);
+}
+.bi-phone-fill{
+    background-color: rgb(31, 175, 12);
+}
+.bi-headset-vr{
+    background-color: rgb(223, 0, 67);
+}
+.bi-window-dock{
+    background-color: rgb(102, 29, 170);
+}
+.category_node{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.category_title{
+    color: rgb(26, 25, 25);
+    font-size: 13px;
+}
+.carousel-container{
+    padding-top: 7px;
+    padding-bottom: 7px ;
+    padding-right: none;
+    background-color: white;
+    margin-top: 4px;
+    box-shadow: 0px 0px 3px 2px rgba(223, 222, 222, 0.521);
+}
+.carousel-container img{
+    height: 180px;
+    border-radius: 3px;
+    
+}
+.carousel-container div{
+    margin-right: 7px;
+    
+}
+@media(min-width:527px){
+    .carousel-container img{
+        height: 230px;
+        border-radius: 3px;
+        
+    }
+}
+@media(min-width: 767px){
+    .carousel-container img{
+        height: 300px;
+        
+    }
+    }
+@media(min-width: 901px){
+.carousel-container img{
+    height: 450px;
+    border-radius: 3px;
+    
+}
+}

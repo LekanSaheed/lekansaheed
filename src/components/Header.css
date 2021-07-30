@@ -1,10 +1,9 @@
 .header_container{
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     padding-left: 10px;
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+   flex-direction: column;
 }
 
 .logo{
@@ -30,91 +29,60 @@
     font-size: 24px;
 }
 
-.cart{
+.cart_icon{
     display: flex;
     margin-right: 10px;
 }
 a{
     text-decoration: none;
 }
-a .cart{
+a .cart_icon{
     color: black;
     text-decoration: none;
 }
 
-.products{
-    margin: 10px;
-    padding: 20px;
-}
-.search_fluid{
-    padding: 10px;
-}
-.search_container{
-    width: auto;
-    border-radius: 50px;
-    border: solid 1px rgb(173, 173, 173);
-    padding: 2px;
-    padding-left: 12px;
-    margin: auto;
-    background-color: white;
-}
-.bi-search{
-    font-size: 18px;
-}
-.search{
-    width: 80%;
-    padding: 5px;
-    border: none;
-    outline: none;
-}
-.product_container{
-    display: flex;
-    overflow-x: scroll;
-    background-color: white;
-    margin: 6px;
-    padding: 10px;
-}
-.category_container{
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: auto auto;
-    grid-template-rows: 1fr;
-    background-color: white;
-    padding-top:15px ;
-    padding-bottom: 15px;
-    margin: 6px;
-}
-.btn-to-cart{
-    color: teal;
-}
-.category_container .bi{
 
-    border-radius: 100%;
-    padding: 18px;
-    color: white;
-    font-size: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.bi-earbuds{
-    background-color: rgb(247, 164, 11);
-}
-.bi-phone-fill{
-    background-color: rgb(31, 175, 12);
-}
-.bi-headset-vr{
-    background-color: rgb(223, 0, 67);
-}
-.bi-window-dock{
-    background-color: rgb(102, 29, 170);
-}
-.category_node{
+.main_group{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: baseline;
 }
-.category_title{
-    color: rgb(26, 25, 25);
-    font-size: 13px;
+.nav-logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.login{
+    margin-right: 10px;
+    color: #000;
+}
+a .login{
+    color: black;
+}
+.cart-props{
+    display: flex;
+    align-items: baseline;
+    
+}
+.account-props{
+    display: flex;
+    align-items: baseline;
+    margin-right: 20px;
+}
+.mobile-hidden{
+    display: none;
+}
+@media(min-width:901px){
+    .menu-btn{
+        display: none;
+    }
+    .mobile-hidden{
+        display: inline;
+        font-size: 15px;
+        color: #282828;
+        font-weight: bolder;
+    }
+    .logo{
+        font-size: 35px;
+    }
 }
