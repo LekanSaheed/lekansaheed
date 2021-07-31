@@ -9,7 +9,7 @@ import Cart from './components/Cart'
 import './App.css';
 import FlatList from './components/FlatList'
 import Nav from './components/Nav'
-
+import Admin from './components/Admin'
 const App = () => {
   return (
     <>
@@ -30,6 +30,7 @@ const App = () => {
        <Cart/>
     </Route>
   </Switch>
+  <Admin/>
   </Router>
   
  

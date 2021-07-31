@@ -43,7 +43,7 @@ const Nav = () => {
                 return(
                     <>
                     <ul key={index}>
-                        <Link><li>{icon}<span className='nav-text'>{text}</span></li></Link>
+                        <Link to='/'><li>{icon}<span className='nav-text'>{text}</span></li></Link>
                     </ul>
                     </>
                 )

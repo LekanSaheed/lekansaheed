@@ -19,7 +19,7 @@ const Header = () => {
                          <i className='bi bi-list'></i>      
                     </div>
                          <span className='logo'>
-                            goCart<i className="bi bi-cart-dash"></i>
+                            GoCart<i className="bi bi-cart-dash"></i>
                          </span>
               </div>
               <div className='lg-search'>

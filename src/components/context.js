@@ -1,12 +1,12 @@
 import React, {useContext, useReducer} from 'react'
-import product from './data'
+
 import {reducer} from './reducers/reducer'
 
+
 const defaultState = {
-    products: product,
     cart: [],
 }
-const AppContext = React.createContext({...product})
+const AppContext = React.createContext()
 
 
 const GlobalContext = () => {

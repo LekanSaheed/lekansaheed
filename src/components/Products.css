@@ -3,6 +3,7 @@
     padding: 10px;
     border-radius: 5px;
     background-color:white ;
+    font-size: 10px;
 }
 .product_container{
     display: grid;
@@ -87,7 +88,17 @@
         height: 300px;
         
     }
+    .products{
+        font-size: 17px;
+        height: 200px;
     }
+    .product_container{
+        grid-template-rows: 1fr;
+        grid-template-columns:auto auto auto;
+        overflow-x: hidden;
+    }
+    }
+    
 @media(min-width: 901px){
 .carousel-container img{
     height: 450px;
