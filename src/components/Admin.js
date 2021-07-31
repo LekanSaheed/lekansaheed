@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {db} from './firebase'
 import {storage} from './firebase'
 
 const Admin = () => {
-const AllInputs = {imgUrl: ''}
 
-const [name, setName] = useState('')
+const [item, setItem] = useState('')
 const [stock, setStock] = useState(0)
 const [desc, setDesc] = useState('')
 const [price, setPrice] = useState(0)
@@ -35,11 +34,11 @@ const handleImageAsFile = (e) => {
               //file upload
               var colRef =  db.collection("phones")
             colRef.add({
-                name, price : parseInt(price, 10), stock, desc, shortDesc, iurl
+                item, price : parseInt(price, 10), stock, desc, shortDesc, iurl
             })
             .then(() => {
                 console.log("Document successfully written!");
-                console.log(name, price, url )
+                console.log(item, price, url )
             })
             .catch((error) => {
                 console.error("Error writing document: ", error);
@@ -58,7 +57,7 @@ const handleImageAsFile = (e) => {
             </div>
             <div className='inputContainer'>
                 <label htmlFor='name'>Item Name</label>
-                <input id="name" required value={name} onChange={(e) => setName(e.target.value)}/>
+                <input id="name" required value={item} onChange={(e) => setItem(e.target.value)}/>
             </div>
             <div className='inputContainer'>
                 <label htmlFor='price'>Item price</label>
@@ -76,7 +75,7 @@ const handleImageAsFile = (e) => {
                 <label htmlFor='desc'>Description</label>
                 <input id="desc" required value={desc} onChange={(e) => setDesc(e.target.value)}/>
             </div>
-            <button id="btn" type='submit' disabled={!name || price <= 0  || !desc || !shortDesc || stock <= 0 || !file} onClick={handleSubmit}>Add products</button>
+            <button id="btn" type='submit' disabled={!item || price <= 0  || !desc || !shortDesc || stock <= 0 || !file} onClick={handleSubmit}>Add products</button>
             </form>  
         </div>
     )

@@ -8,51 +8,46 @@ import {db} from './firebase'
 import './Products.css' 
 
 const Products = () => {
-const {state, addToCart} = GlobalContext()
+const { addToCart} = GlobalContext()
 const [products, setProduct] = useState([])
 const [isLoading, setIsLoading] = useState(true)
 
 useEffect(() => {
-    let productObj =  true//JSON.parse(localStorage.getItem(('item')))
-    if (!productObj){
-      setProduct(productObj)
-    }
-    else{
-      const fetchProducts = async () => {
-        try {
-          if (!db) return;
-          const ref = db.collection("phones");
-  
-          const docs = await ref.get();
-  
-          let allProducts = [];
-          docs.forEach((doc) => {
-            const {item, price, stock, shortDesc, desc, iurl, category}= doc.data();
-            allProducts.push({
-              item, price, stock, shortDesc, desc, id: doc.id, iurl, category
-            });
-            
-          });
-          
-          setProduct(allProducts);
-          setIsLoading(false)
-          let stringProducts = JSON.stringify(allProducts)
-          localStorage.setItem('item', stringProducts)
-        } catch (error) {
-          console.log("error", error);
-        }
-      }; fetchProducts();
-    }   
-  }, [setProduct]);
+  localStorage.removeItem('item')
+    const fetchProducts = async () => {
+      try {
+        const ref = db.collection("phones");
 
+        const docs = await ref.get();
+
+        let allProducts = [];
+        docs.forEach((doc) => {
+          const {item, price, stock, shortDesc, desc, iurl, category}= doc.data();
+          allProducts.push({
+            item, price, stock, shortDesc, desc, id: doc.id, iurl, category
+          });
+        });
+        setProduct(allProducts);
+        console.log(allProducts)
+        products.length >= 1 && setIsLoading(false)
+        console.log('Loading:', isLoading, products)
+      } catch (error) {
+        console.log("error", error);
+      }
+      console.log('Loading:', isLoading, products)
+    }; fetchProducts();
+  }   
+, [setProduct, products, isLoading]);
     return (
         <>
         <div className='product_container'>
 
            
-            {isLoading ? <><MyLoader/> <MyLoader/> <MyLoader/></> : products.map((items) => {
+            {isLoading ? <><MyLoader/> <MyLoader/> <MyLoader/></> :
+            
+             products.map((items) => {
                     const {item, price, iurl, id} = items
-                    console.log(id)
+                    console.log('id',id)
                     return( 
                         <>   {
                                   <div className='products' key={id}>
