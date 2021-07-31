@@ -29,6 +29,9 @@ const App = () => {
     <Route path='/cart'>
        <Cart/>
     </Route>
+    <Route path='/login'>
+       <Admin/>
+    </Route>
   </Switch>
   <Admin/>
   </Router>
