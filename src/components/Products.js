@@ -17,6 +17,7 @@ const {state, addToCart} = GlobalContext()
                 const {item, price} = items
                 return(
                     <>
+                    
                               <div className='products' key={items.id}>
                                   <li>{item}<br/>
                                  ${price}<br/></li>
