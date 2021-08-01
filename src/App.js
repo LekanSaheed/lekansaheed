@@ -10,8 +10,11 @@ import './App.css';
 import FlatList from './components/FlatList'
 import Nav from './components/Nav'
 import Admin from './components/Admin'
+import Tag from './components/Tag'
+
 const App = () => {
   return (
+ 
     <>
 <div className="">
   <Router>
@@ -23,6 +26,7 @@ const App = () => {
        <Nav/>
       <FlatList/>
        </div>
+       <Tag text={'Phones'}/>
     <Products/>
     </Route>
 

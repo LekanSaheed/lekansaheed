@@ -2,6 +2,7 @@ import {Link } from 'react-router-dom'
 import React from 'react'
 
 import './Nav.css'
+import { GlobalContext } from './context'
 
 const navdata = [{
     text: 'Phones',
@@ -36,20 +37,26 @@ const navdata = [{
     icon: <i className='bi bi-clock'></i>
 }]
 const Nav = () => {
+
+    const {state, handleNavToggle} = GlobalContext()
     return (
-        <nav className='nav-container'>
+        <div className={`${state.navToggle && 'nav-overlay'}`}>
+        <nav className={`${state.navToggle ? 'nav-container show-nav' : 'nav-container'}` }>
+            <div onClick={handleNavToggle}><i className='bi bi-x-lg close-nav'></i></div>
+            <ul>
             {navdata.map((navs, index) => {
                 const {icon, text} = navs
                 return(
                     <>
-                    <ul key={index}>
+                    
                         <Link to='/'><li>{icon}<span className='nav-text'>{text}</span></li></Link>
-                    </ul>
+                    
                     </>
                 )
             })}
+            </ul>
         </nav>
-    )
+</div>    )
 }
 
 export default Nav

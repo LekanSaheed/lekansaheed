@@ -8,8 +8,29 @@ body{
   margin: 0;
   box-sizing: border-box;
 }
-.nav_and_flatlist{
-  display: inline-grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: 1fr;
+
+.tag{
+    background-color: rgb(102, 29, 170);
+    width: 200px;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 8px;
+    margin: 10px;
+    font-weight: bolder;
+}
+
+@media(min-width:901px){
+  .nav_and_flatlist{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+  }
+  .tag{
+    margin-top: 25px;
+    font-size: 18px;
+    padding: 15px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
 }

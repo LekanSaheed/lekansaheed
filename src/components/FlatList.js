@@ -9,7 +9,7 @@ import png3 from '../assets/gadgetsale.jpg'
 import png4 from '../assets/phonesale.jpg'
 import png5 from '../assets/imagesale.jpg'
 import png6 from '../assets/gatdgets.jpg'
-
+import './FlatList.css'
 const FlatList = () => {
     return (
         <div className='carousel-container'>

@@ -1,6 +1,21 @@
 
 
 export const reducer = (state, action) => {
+    if(action.type === "SET_PRODUCTS"){
+        const allProducts = action.payload
+        return{
+            ...state,
+            products: allProducts,
+            isLoading: false
+        }
+    }
+    if(action.type === "TOGGLE_NAV"){
+        console.log(state.navToggle)
+        return{
+            ...state,
+            navToggle: !state.navToggle
+        }
+    }
         if(action.type === "ADD_TO_CART"){
 
             const uid = action.payload.id

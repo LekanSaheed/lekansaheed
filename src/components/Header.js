@@ -5,8 +5,11 @@ import SearchBar from './SearchBar'
 import Total from './Total'
 
 import './Header.css'
+import { GlobalContext } from './context'
 
 const Header = () => {
+const {handleNavToggle} = GlobalContext()
+
     return (
         <>
         <div className='info'>
@@ -15,7 +18,7 @@ const Header = () => {
       <header className="header_container">
           <div className='main_group'>
               <div className='nav-logo'>
-                    <div className='menu-btn'>
+                    <div className='menu-btn' onClick={handleNavToggle}>
                          <i className='bi bi-list'></i>      
                     </div>
                          <span className='logo'>
