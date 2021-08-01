@@ -27,6 +27,7 @@
 }
 .btn-to-cart{
     color: teal;
+    cursor: pointer;
 }
 .category_container .bi{
 

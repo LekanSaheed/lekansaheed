@@ -47,11 +47,11 @@ const Nav = () => {
             {navdata.map((navs, index) => {
                 const {icon, text} = navs
                 return(
-                    <>
+                    <div key={index}>
                     
                         <Link to='/'><li>{icon}<span className='nav-text'>{text}</span></li></Link>
                     
-                    </>
+                    </div>
                 )
             })}
             </ul>

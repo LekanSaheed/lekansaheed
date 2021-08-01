@@ -1,0 +1,51 @@
+.product_table{
+    background-color: #f3f8fc;
+    height: 100vh;
+
+}
+
+.inputContainer{
+    margin-bottom: 10px;
+}
+.inputContainer input{
+    padding: 10px;
+    border: solid 1px rgb(59, 157, 255);
+    background-color: white;
+    margin-right: 20px;
+    width: 100%;
+}
+.inputContainer{
+
+}
+.upload-heading{
+    background-color: #1c83c6;
+    padding: 20px;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+.upload-container{
+    display: grid;
+    /* justify-content: center;
+    flex-direction: column;
+    align-items: center; */
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr 1fr ;
+    padding: 50px;
+    background-color:#f3f8fc ;
+}
+.upload-container label{
+    color: #1c83c6;
+    font-weight: bold;
+}
+.btn-submit{
+    padding: 10px;
+    background-color: #1c83c6;
+    color: white;
+    border: none;
+}
+.upload-container span{
+    color: grey;
+    font-size: 12px;
+}

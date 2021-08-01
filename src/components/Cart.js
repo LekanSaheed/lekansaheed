@@ -1,29 +1,32 @@
 import React from 'react'
 import { GlobalContext } from './context'
-
+import './Cart.css'
 const Cart = () => {
     
     const {state, removeItem, clearAllItems} = GlobalContext()
     return (
        
-        <div>
+        <div className='cart-container'>
              
             {state.cart.length < 1 ?<h1>No item in cart</h1> : state.cart.map((items, index) => {
-                const {item, price, stock, id, quantity} = items
+                const {item, price, stock, id, quantity, iurl} = items
                 return(
-                    <div key={id}>
-                    <div>
+                    <div key={id } className='cart-product'>
+                        <div>
+                            <img src={iurl} alt='cart item'/>
+                            </div>
+                    <div className='cart-item-name'>
                         {item}
                         </div>       
-                        <div>
-                        {price}
+                        <div className='cart-item-price'>
+                        ${price}
                         </div>
                         <div>
                         quantity    {quantity}
                         </div>
 
                         <div>In Stock: {stock}</div>
-                        <button className="btn btn-danger" onClick={() => removeItem(items)}>remove</button>
+                        <button className="btn-remove" onClick={() => removeItem(items)}>remove</button>
 
                     </div>
                    
