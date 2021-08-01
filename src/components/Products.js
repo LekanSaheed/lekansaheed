@@ -42,6 +42,85 @@ const { state, addToCart} = GlobalContext()
 <Link to='/'><div className='category_node'><i className="bi bi-headset-vr"></i><span className='category_title'>Gadgets</span></div></Link>
 <Link to='/'><div className='category_node'><i className="bi bi-window-dock"></i><span className='category_title'>Home Appliances</span></div></Link>
         </div>
+
+<Tag text='Electronics'/>
+        <div className='product_container'>
+
+           
+{state.isLoading ? <><MyLoader/> <MyLoader/> <MyLoader/></> :
+
+ state.products.map((items) => {
+        const {item, price, iurl, id} = items
+        console.log('id',id)
+        return( 
+            <>   {
+                      <div className='products' key={id}>
+                          
+                      
+                              <img src={iurl} alt='prods' height='100' width='100'/>
+                          
+                          <li>{item}<br/>
+                         ${price}<br/></li>
+                          <span className='btn-to-cart' onClick={() => addToCart(items)}>Add To Cart</span>
+                      </div>}
+          </>
+    )
+    })
+   
+}
+</div>
+<Tag text="Gaming"/>
+<div className='product_container'>
+
+           
+{state.isLoading ? <><MyLoader/> <MyLoader/> <MyLoader/></> :
+
+ state.products.map((items) => {
+        const {item, price, iurl, id} = items
+        console.log('id',id)
+        return( 
+            <>   {
+                      <div className='products' key={id}>
+                          
+                      
+                              <img src={iurl} alt='prods' height='100' width='100'/>
+                          
+                          <li>{item}<br/>
+                         ${price}<br/></li>
+                          <span className='btn-to-cart' onClick={() => addToCart(items)}>Add To Cart</span>
+                      </div>}
+          </>
+    )
+    })
+   
+}
+</div>
+<Tag text='Laptops'/>
+<div className='product_container'>
+
+           
+{state.isLoading ? <><MyLoader/> <MyLoader/> <MyLoader/></> :
+
+ state.products.map((items) => {
+        const {item, price, iurl, id} = items
+        console.log('id',id)
+        return( 
+            <>   {
+                      <div className='products' key={id}>
+                          
+                      
+                              <img src={iurl} alt='prods' height='100' width='100'/>
+                          
+                          <li>{item}<br/>
+                         ${price}<br/></li>
+                          <span className='btn-to-cart' onClick={() => addToCart(items)}>Add To Cart</span>
+                      </div>}
+          </>
+    )
+    })
+   
+}
+</div>
         </>
     )
 }

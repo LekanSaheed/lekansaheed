@@ -10,13 +10,15 @@ body{
 }
 
 .tag{
-    background-color: rgb(102, 29, 170);
+    background-color: rgb(134, 53, 209);
     width: 200px;
     color: white;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 20px;
+    font-size: 14px;
     padding: 8px;
     margin: 10px;
+    margin-top: 20px;
+    padding-left: 20px;
     font-weight: bolder;
 }
 
