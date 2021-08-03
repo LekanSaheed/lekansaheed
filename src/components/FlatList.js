@@ -13,7 +13,7 @@ import './FlatList.css'
 const FlatList = () => {
     return (
         <div className='carousel-container'>
-            <Carousel dynamicHeight={false} showArrows={false} centerSlidePercentage={80} centerMode={true} autoPlay={true} infiniteLoop={true} showThumbs={false} swipeable={true}> 
+            <Carousel dynamicHeight={false} showIndicators={false} showStatus={false} showArrows={false} centerSlidePercentage={80} centerMode={true} autoPlay={true} infiniteLoop={true} showThumbs={false} swipeable={true}> 
             <div>
                  <img src={png3} alt='info'/>
                     <p className="legend">Legend 1</p>

@@ -3,29 +3,32 @@ import { GlobalContext } from './context'
 import './Cart.css'
 const Cart = () => {
     
-    const {state, removeItem, clearAllItems} = GlobalContext()
+    const {state, removeItem, clearAllItems, increment, decrement} = GlobalContext()
+    
     return (
        
         <div className='cart-container'>
              
             {state.cart.length < 1 ?<h1>No item in cart</h1> : state.cart.map((items, index) => {
-                const {item, price, stock, id, quantity, iurl} = items
+                // items.quantity = 0
                 return(
-                    <div key={id } className='cart-product'>
-                        <div>
-                            <img src={iurl} alt='cart item'/>
+                    
+                    <div key={index } className='cart-product'>
+                        <div className='cart-item-img-container'>
+                            <img src={items.iurl} alt='cart item'/>
                             </div>
                     <div className='cart-item-name'>
-                        {item}
+                        {items.item}
                         </div>       
                         <div className='cart-item-price'>
-                        ${price}
+                        ${items.price}
                         </div>
                         <div>
-                        quantity    {quantity}
+                        quantity    {items.quantity}
                         </div>
-
-                        <div>In Stock: {stock}</div>
+                        <button onClick={() => decrement(items)}>-</button><br/>
+                        <button onClick={() => increment(items)}>+</button>
+                        <div>In Stock: {items.stock}</div>
                         <button className="btn-remove" onClick={() => removeItem(items)}>remove</button>
 
                     </div>

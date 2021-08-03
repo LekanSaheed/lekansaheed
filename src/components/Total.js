@@ -6,7 +6,16 @@ const Total = () => {
     const {state} = GlobalContext()
     const [total, setTotal] = useState(0)
 useEffect(() => {
-    setTotal(state.cart.length)
+    const quantity = state.cart.map(item => {
+        return item.quantity
+    })
+    
+    const add = (accumulator, a) => {
+        return accumulator + a
+    }
+  const sum =  quantity.reduce(add, 0)
+ 
+    setTotal(state.cart.length + sum - state.cart.length)
 }, [state.cart])
    
     return (

@@ -9,7 +9,9 @@ const defaultState = {
     products: [],
     cart: [],
     isLoading: true,
-    navToggle: false
+    navToggle: false,
+    showDetails: false,
+    productDetails: []
 }
 
 
@@ -57,8 +59,32 @@ const removeItem = (items) => {
 const clearAllItems = () => {
     dispatch({type: "CLEAR_ALL"})
 }
+const productDetails =(item) => {
+  dispatch({type: "PRODUCT_DETAILS", payload: item})
+}
+
+const closeModal = () => {
+  dispatch({type: "CLOSE_MODAL"})
+}
+const increment = (item) => {
+  dispatch({type: 'INCREMENT', payload: item})
+  
+}
+const decrement = (item) => {
+  dispatch({type: 'DECREMENT', payload: item})
+  
+}
+
     return <AppContext.Provider 
-    value={{ state, addToCart, removeItem, clearAllItems, handleNavToggle }}
+    value={{ state,
+       addToCart,
+        removeItem,
+         clearAllItems,
+          handleNavToggle,
+           productDetails,
+            closeModal,
+             increment,
+               decrement }}
     
     >{children}</AppContext.Provider>
 }

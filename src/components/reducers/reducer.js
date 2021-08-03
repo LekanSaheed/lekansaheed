@@ -17,19 +17,15 @@ export const reducer = (state, action) => {
     }
         if(action.type === "ADD_TO_CART"){
 
-            const uid = action.payload.id
-            const exists = state.cart.some(item => item.id === uid);
-
-            const newcart = exists
-        ? state.cart.map(item => item.id === uid ? { ...item, quantity: item.quantity + 1 } : item) :
-         [...state.cart, action.payload];
+            action.payload.quantity = 1
             return{
                 ...state,
-                cart: newcart
+                cart: [...state.cart, action.payload]
             }
         }
 
         if(action.type === "REMOVE_ITEM") {
+           
            const items = action.payload
            const newCart = state.cart.filter(item => item !== items)
             return{
@@ -41,6 +37,45 @@ export const reducer = (state, action) => {
             return{
                 ...state,
                 cart:[],
+            }
+        }
+        if(action.type === "PRODUCT_DETAILS"){
+            return{
+                ...state,
+                showDetails:true,
+                productDetails: [action.payload]
+            }
+        }
+        if(action.type === "CLOSE_MODAL"){
+            return{
+                ...state,
+                showDetails: false
+            }
+        }
+        if(action.type === "INCREMENT"){
+            
+            const working_on = action.payload.id
+            const  increase = state.cart.map(item => item.id === working_on ? {...item, quantity: item.quantity + 1} : item)
+
+            return{
+                ...state,
+                cart: increase
+            }
+        }
+        if(action.type === "DECREMENT"){
+            const items = action.payload
+            const working_on = action.payload.id
+            const  decrease = state.cart.map(item => item.id === working_on ? {...item, quantity: item.quantity - 1} : item)
+            if(action.payload.quantity === 1){
+                const newCart = state.cart.filter(item => item !== items)
+                return{
+                    ...state,
+                    cart: newCart
+                }
+            }
+            return{
+                ...state,
+                cart: decrease
             }
         }
       return state
