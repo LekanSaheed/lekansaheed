@@ -17,8 +17,8 @@ const ProductDetails = () => {
                              <div className='img-details-container'>
                              <img className="img-details" src={items.iurl} alt='stateless'/>
                              </div>
-                           <p>Product:{items.item}</p>
-                            <p><span>Price:</span>${items.price}</p>
+                           <p>Product: {items.item}</p>
+                            <p><span>Price: </span>${items.price}</p>
                            Description: <p>{items.desc}</p>
                           
                            <div className="to-cart-prop">
@@ -26,17 +26,17 @@ const ProductDetails = () => {
                         
                               </div>
                            { state.cart.find(item => item.id === items.id) ?  <div className='increment-prop'>
-                               <p>Item in Cart</p>
-                                  <Link to='/cart' onClick={closeModal}>Go To Cart</Link>
+                               <p className='visual-anim'>Item in cart<i className='bi bi-cart-dash'></i></p>
+                                  <Link to='/cart' onClick={closeModal}><div className='go-to-cart'>GO TO CART</div></Link>
                                  <p>or</p>
-                                  <div onClick={closeModal}>
-                            <span>Continue shopping</span>
+                                  <div className='continue-shopping' onClick={closeModal}>
+                            <span>CONTINUE SHOPPING</span>
                                     </div>  
                                </div>
                                :
                                <div className='btn-to-cart' onClick={() => addToCart(items)}>
                                <i className='bi bi-cart'></i>
-                               <span>Add To Cart</span>
+                               <span>ADD TO CART</span>
                             </div>
                             // const newcart = exists ? state.cart.map(item => item.id === uid ? {...item, quantity: parseInt(item.quantity) + 1} : item) : [...state.cart, action.payload]  }
                            }

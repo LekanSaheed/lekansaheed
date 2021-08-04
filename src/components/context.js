@@ -11,7 +11,10 @@ const defaultState = {
     isLoading: true,
     navToggle: false,
     showDetails: false,
-    productDetails: []
+    productDetails: [],
+    modalContent: '',
+    showStatusModal: false,
+    cartModalOn: false
 }
 
 
@@ -43,6 +46,25 @@ const AppProvider = ({children}) => {
           }; fetchProducts();
         }   
       , []);
+// useEffect (() => {
+//   const products =[
+//     {id: 1,item: 'grape',
+//   price: 22, stock: 5, brand: 'oraimo'},
+//   {id: 2,item: 'grape',
+//   price: 25, stock: 4, brand: 'samsung'},
+//   {id: 3,item: 'grape',
+//   price: 24, stock: 9, brand: 'tecno'},
+//   {id: 4,item: 'grape',
+//   price: 23, stock: 7, brand: 'apple'}
+//   ]
+//   dispatch({type: 'SET_PRODUCTS', payload: products})
+// }, []) 
+  
+  if(state.showStatusModal){
+    setTimeout(() => {
+      dispatch({type: 'CLOSE_STATUS_MODAL'})
+    }, 4000);
+  }
 
 const handleNavToggle = () => {
     dispatch({type: 'TOGGLE_NAV'})
@@ -75,6 +97,14 @@ const decrement = (item) => {
   
 }
 
+const successMessage = () => {
+  dispatch({type: "SUCCESS_MESSAGE"})
+}
+
+const errorMessage = () => {
+  dispatch({type: "ERROR_MESSAGE"})
+}
+
     return <AppContext.Provider 
     value={{ state,
        addToCart,
@@ -84,7 +114,9 @@ const decrement = (item) => {
            productDetails,
             closeModal,
              increment,
-               decrement }}
+               decrement,
+                 successMessage,
+                   errorMessage }}
     
     >{children}</AppContext.Provider>
 }

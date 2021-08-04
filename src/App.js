@@ -11,15 +11,18 @@ import FlatList from './components/FlatList'
 import Nav from './components/Nav'
 import Admin from './components/Admin'
 import Tag from './components/Tag'
+import StatusModal from './components/StatusModal'
+import { GlobalContext } from './components/context'
 
 const App = () => {
+  const {state} = GlobalContext()
   return (
  
     <>
 <div className="">
   <Router>
   <Header/>
-  
+ {state.showStatusModal &&  <StatusModal modalContent={state.modalContent}/>}
   <Switch>
     <Route exact path='/'>
        <div className="nav_and_flatlist">

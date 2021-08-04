@@ -10,6 +10,27 @@ const Products = () => {
     
 const { state, productDetails} = GlobalContext()
 
+const phoneProduct = state.products.map((items, index) => {
+    // const {quantity = [0]} = items
+    // const newItem = {...items, {quantity}}
+   
+        return( 
+          
+            <div key={index}>   {
+                      <div className='products' onClick={() => productDetails(items)}>
+                          
+                      
+                              <img src={items.iurl} alt='prods' height='100' width='100'/>
+                          
+                          <li>{items.item}<br/>
+                         ${items.price}<br/></li>
+q                        {items.quantity}
+                      
+                      </div>}
+          </div>
+        
+    )
+    })
     return (
         <>
         {state.showDetails && <ProductDetails/>}
@@ -18,27 +39,7 @@ const { state, productDetails} = GlobalContext()
            
             {state.isLoading ? <><MyLoader/> <MyLoader/> <MyLoader/></> :
             
-             state.products.map((items, index) => {
-                // const {quantity = [0]} = items
-                // const newItem = {...items, {quantity}}
-               
-                    return( 
-                      
-                        <div key={index}>   {
-                                  <div className='products' onClick={() => productDetails(items)}>
-                                      
-                                  
-                                          <img src={items.iurl} alt='prods' height='100' width='100'/>
-                                      
-                                      <li>{items.item}<br/>
-                                     ${items.price}<br/></li>
-            q                        {items.quantity}
-                                  
-                                  </div>}
-                      </div>
-                    
-                )
-                })
+             phoneProduct
                
             }
         </div>
@@ -51,7 +52,6 @@ const { state, productDetails} = GlobalContext()
 <Link to='/'><div className='category_node'><i className="bi bi-headset-vr"></i><span className='category_title'>Gadgets</span></div></Link>
 <Link to='/'><div className='category_node'><i className="bi bi-window-dock"></i><span className='category_title'>Home Appliances</span></div></Link>
         </div>
-
         </>
     )
 }

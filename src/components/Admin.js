@@ -3,6 +3,7 @@ import {db} from './firebase'
 import {storage} from './firebase'
 import Select from 'react-select'
 import './Admin.css'
+import { GlobalContext } from './context'
 
 const Admin = () => {
     const options = [
@@ -26,6 +27,7 @@ const [file, setFile] = useState(null);
 const [url, setURL] = useState("");
 const [category, setCategory] = useState(null)
 
+const {errorMessage, successMessage} = GlobalContext() 
 
 const handleImageAsFile = (e) => {
     setFile(e.target.files[0]);
@@ -46,7 +48,7 @@ const handleImageAsFile = (e) => {
               setFile(null);
               setURL(iurl);
               console.log('url', typeof(iurl), iurl)
-
+              successMessage()
               //file upload
               var colRef =  db.collection("phones")
             colRef.add({
@@ -57,10 +59,12 @@ const handleImageAsFile = (e) => {
             })
             .then(() => {
                 console.log("Document successfully written!");
+                successMessage()
                 console.log(item, price, url, category )
             })
             .catch((error) => {
                 console.error("Error writing document: ", error);
+                errorMessage()
             });
             });
         });

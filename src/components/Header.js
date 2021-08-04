@@ -21,9 +21,10 @@ const {handleNavToggle} = GlobalContext()
                     <div className='menu-btn' onClick={handleNavToggle}>
                          <i className='bi bi-list'></i>      
                     </div>
-                         <span className='logo'>
+                    <Link to='/'><span className='logo'>
                             GoCart<i className="bi bi-cart-dash"></i>
-                         </span>
+                         </span></Link>
+                         
               </div>
               <div className='lg-search'>
               <SearchBar/>

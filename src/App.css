@@ -21,7 +21,19 @@ body{
     padding-left: 20px;
     font-weight: bolder;
 }
-
+.status-modal{
+  position: fixed;
+  top: 0;
+  background-color: limegreen;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  z-index: 100;
+  animation: move .9s cubic-bezier(0.215, 0.610, 0.355, 1);
+  font-weight: bolder;
+  font-size: 17px;
+}
 @media(min-width:901px){
   .nav_and_flatlist{
     display: grid;
@@ -35,4 +47,22 @@ body{
     padding-left: 18px;
     padding-right: 18px;
   }
+}
+
+@keyframes move{
+  0%{top: 0px;}
+  50%{top: 10px}
+  100%{top: 0px;}
+}
+@-webkit-keyframes move{
+  from{top: 0px}
+  to {top: 10px}
+}
+@-moz-keyframes move{
+  from{top: 0px}
+  to {top: 10px}
+}
+@-o-keyframes move{
+  from{top: 0px}
+  to {top: 10px}
 }
