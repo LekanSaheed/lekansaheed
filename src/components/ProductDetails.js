@@ -17,9 +17,11 @@ const ProductDetails = () => {
                              <div className='img-details-container'>
                              <img className="img-details" src={items.iurl} alt='stateless'/>
                              </div>
-                           <p>Product: {items.item}</p>
+                           <p><span className='product-title-desc'>Product:</span> {items.item}</p>
                             <p><span>Price: </span>${items.price}</p>
-                           Description: <p>{items.desc}</p>
+                            <p className='product-desc-desc'><span style={{color: 'deepblue', 
+                            fontWeight: 'bolder'
+                            }}>Description:</span> {items.desc}</p>
                           
                            <div className="to-cart-prop">
                           <div>

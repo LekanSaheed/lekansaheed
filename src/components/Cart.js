@@ -33,9 +33,9 @@ const Cart = () => {
                         </div>
                         </div>
                         <div className='quantity-buttons'>
-                        <div onClick={() => decrement(items)}><i className="bi bi-caret-up-fill"></i></div>
+                        <div onClick={() => decrement(items)}><i className="bi bi-caret-up-fill left"></i></div>
                         {items.quantity}
-                        <div onClick={() => increment(items)}><i className="bi bi-caret-down-fill"></i></div>
+                        <div onClick={() => increment(items)}><i className="bi bi-caret-down-fill right"></i></div>
                         </div>
                         
                     </div>

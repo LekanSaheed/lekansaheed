@@ -9,14 +9,22 @@
     justify-content: center;
     align-items: center;
 }
-
+.product-title-desc{
+    font-size: 15px;
+    font-weight: bolder;
+    color: rgb(0, 0, 41);
+}
+.product-desc-desc{
+    font-size: 13px;
+    padding: 2px;
+}
 .modal-child{
     background-color: white;
     position: absolute;
-    top: 10px;
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     padding-top: 50px;
     padding: 20px;
     overflow-y: scroll;
