@@ -49,7 +49,7 @@ const Cart = () => {
       {state.cart.length > 0 &&   <div style={{display: "flex", justifyContent: 'space-between', alignItems: 'center', marginBottom: '70px', borderBottom: ' solid 2px black'}}> <div style={{fontSize: '18px', fontWeight: 'bold'}}>Total:</div><p className='total-price'>${totalPrice}</p></div>
 }
 
-        {state.cart.length > 0 && <div className='checkout-btn'>CHECKOUT</div>}
+        {state.cart.length > 0 && <Link to='/process-order-payment' ><div className='checkout-btn'>CHECKOUT</div></Link>}
         </div>
     )
 }

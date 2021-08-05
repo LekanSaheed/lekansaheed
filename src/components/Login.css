@@ -1,0 +1,98 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color:#102C47;
+    flex-direction: column;
+}
+.login-container .logo{
+    color: white;
+    font-size: 30px;
+    margin-top: -10px;
+}
+.login-modal-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.login-modal{
+    background-color: white;
+    padding: 28px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.login-modal p{
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.login-input-container{
+    width: 290px;
+    padding-right: 15px;
+}
+.login-input{
+    background-color: #E8F0FE;
+    padding: 15px;
+    margin: 8px;
+    border: solid 1px #DEE5E7;
+    transition: .3s;
+    outline: none;
+    border-radius: 2px;
+    width: 100%;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(180, 180, 180);
+    opacity: 1; /* Firefox */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(180, 180, 180);
+    opacity: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color:rgb(180, 180, 180) ;
+    opacity: 1;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+.login-input:focus{
+    background-color: white;
+    border-color: black;
+}
+.login-btn{
+    background-color: rgb(127,208,150);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    margin: 8px;
+    border-radius: 2px;
+    border: none;
+}
+@media(min-width: 767px){
+    .login-input-container{
+        width: 350px;
+    }
+    .login-modal-container{
+        margin-top: -100px;
+    }
+    .login-btn{
+        width: 100%;
+    }
+    .login-input{
+        padding: 15px;
+    }
+}

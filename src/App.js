@@ -13,6 +13,8 @@ import Admin from './components/Admin'
 import Tag from './components/Tag'
 import StatusModal from './components/StatusModal'
 import { GlobalContext } from './components/context'
+import PaystackPay from './components/PaystackPay'
+import Login from './components/Login'
 
 const App = () => {
   const {state} = GlobalContext()
@@ -37,10 +39,18 @@ const App = () => {
        <Cart/>
     </Route>
     <Route path='/login'>
+      <Login/>
+      
+    </Route>
+    <Route path='/admin'>
+      <Login/>
        <Admin/>
     </Route>
+    <Route path='/process-order-payment'>
+       <PaystackPay/>
+    </Route>
   </Switch>
-
+  
   </Router>
   
  
