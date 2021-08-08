@@ -85,7 +85,7 @@ export const reducer = (state, action) => {
             }
         }
         if(action.type === "INCREMENT"){
-            
+            console.log(state.cart)
             const working_on = action.payload.id
             if(action.payload.quantity === action.payload.stock){
                 return{
@@ -127,6 +127,22 @@ export const reducer = (state, action) => {
                 modalContent: 'Product Quantity Decreased',
                 showStatusModal: true,
                 cartModalOn: true
+            }
+        }
+        if(action.type === "LOGIN"){
+           if(action.payload.email === "lekan" && action.payload.password === "saheed"){
+            console.log('looged', state.isLoggedIn)
+            return{
+                ...state,
+                isLoggedIn: true
+            }
+           }
+        }
+
+        if(action.type === 'LOGOUT'){
+            return{
+                ...state,
+                isLoggedIn: false
             }
         }
       return state

@@ -4,6 +4,9 @@ import React from 'react'
 import './Nav.css'
 import { GlobalContext } from './context'
 
+const Nav = () => {
+
+    const {state, handleNavToggle} = GlobalContext()
 const navdata = [{
     text: 'Phones',
     icon: <i className='bi bi-phone'></i>
@@ -35,28 +38,33 @@ const navdata = [{
 {
     text: 'Utensils',
     icon: <i className='bi bi-clock'></i>
+},
+{ 
+    text: `${state.isLoggedIn ? 'Log out' : 'Login'}`,
+    icon: <i className="bi bi-person"></i>,
+    link: `${state.isLoggedIn ? '/logout' : '/login'}`
 }]
-const Nav = () => {
 
-    const {state, handleNavToggle} = GlobalContext()
+   
     return (
         <div className={`${state.navToggle && 'nav-overlay'}`}>
         <nav className={`${state.navToggle ? 'nav-container show-nav' : 'nav-container'}` }>
             <div onClick={handleNavToggle}><i className='bi bi-x-lg close-nav'></i></div>
             <ul>
             {navdata.map((navs, index) => {
-                const {icon, text} = navs
+                const {icon, text, link} = navs
                 return(
                     <div key={index}>
                     
-                        <Link to='/'><li>{icon}<span className='nav-text'>{text}</span></li></Link>
+                        <Link to={link}><li>{icon}<span className='nav-text'>{text}</span></li></Link>
                     
                     </div>
                 )
             })}
             </ul>
         </nav>
-</div>    )
+</div>  
+ )
 }
 
 export default Nav

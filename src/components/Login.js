@@ -1,40 +1,43 @@
 import React, {useState} from 'react'
 import './Login.css'
 import {Link} from 'react-router-dom'
-import {auth}  from './firebase'
+import { GlobalContext } from './context'
 const Login = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-  
-    const signIn = () => {
-        auth.signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-          // Signed in
-          var user = userCredential.user;
-          console.log(user)
+  const {logIn} = GlobalContext()
+    // const signIn = () => {
+    //     // auth.signInWithEmailAndPassword(email, password)
+    //     // .then((userCredential) => {
+    //     //   // Signed in
+    //     //   var user = userCredential.user;
+    //     //   console.log(user)
 
-          // ...
-        })
-        .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
+    //     //   // ...
+    //     // })
+    //     // .catch((error) => {
+    //     //   var errorCode = error.code;
+    //     //   var errorMessage = error.message;
 
-          console.log(errorMessage, errorCode)
-        });
-        auth.onAuthStateChanged((user) => {
-          if (user) {
-            // User is signed in, see docs for a list of available properties
-            // https://firebase.google.com/docs/reference/js/firebase.User
-            var uid = user.uid;
-            console.log(uid)
-            // ...
-          } else {
-            // User is signed out
-            // ...
-          }
-        });
-    }
+    //     //   console.log(errorMessage, errorCode)
+    //     // });
+    //     // auth.onAuthStateChanged((user) => {
+    //     //   if (user) {
+    //     //     // User is signed in, see docs for a list of available properties
+    //     //     // https://firebase.google.com/docs/reference/js/firebase.User
+    //     //     var uid = user.uid;
+    //     //     console.log(uid)
+    //     //     // ...
+    //     //   } else {
+    //     //     // User is signed out
+    //     //     // ...
+    //     //   }
+    //     // });
+    //     if(email === 'lekan' && password === 'saheed'){
+    //      state.isLoggedin = true
+    //     }
+    // }
     return (
         <div className='login-container'>
             <div className='login-modal-container'>
@@ -50,7 +53,7 @@ const Login = () => {
                 <input className='login-input' type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='password'/>
             </div>
             <div className='login-input-container'>
-                <input disabled={!email || !password} className='login-btn' onClick={signIn} type='submit' value='Log in to your account'/>
+                <button disabled={!email || !password} style={{backgroundColor: `${email && password ? 'rgb(4, 130, 94)' : 'rgb(127,208,150)'}`}}className='login-btn' onClick={() => logIn(email, password)}>Login to your account</button>
             </div>
             </div>
            

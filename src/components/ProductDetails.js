@@ -15,7 +15,9 @@ const ProductDetails = () => {
                             <button className='btn-close' onClick={closeModal}>CLOSE</button>
                           <div>
                              <div className='img-details-container'>
-                             <img className="img-details" src={items.iurl} alt='stateless'/>
+                            <div className="img-details"> <img  src={items.iurl} alt='stateless'/><p>1 0f 3</p></div>
+                            <div className="img-details"> <img  src={items.iurl} alt='stateless'/><p>2 0f 3</p></div>
+                            <div className="img-details"> <img  src={items.iurl} alt='stateless'/><p>3 0f 3</p></div>
                              </div>
                            <p><span className='product-title-desc'>Product:</span> {items.item}</p>
                             <p><span>Price: </span>${items.price}</p>

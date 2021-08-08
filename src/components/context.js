@@ -14,7 +14,8 @@ const defaultState = {
     productDetails: [],
     modalContent: '',
     showStatusModal: false,
-    cartModalOn: false
+    cartModalOn: false,
+    isLoggedIn: false
 }
 
 
@@ -105,6 +106,12 @@ const errorMessage = () => {
   dispatch({type: "ERROR_MESSAGE"})
 }
 
+const logIn =(email, password)=> {
+  dispatch({type: "LOGIN", payload: {email, password}})
+}
+const logout = () => {
+  dispatch({type: "LOGOUT"})
+}
     return <AppContext.Provider 
     value={{ state,
        addToCart,
@@ -116,7 +123,9 @@ const errorMessage = () => {
              increment,
                decrement,
                  successMessage,
-                   errorMessage }}
+                   errorMessage,
+                    logIn, 
+                      logout }}
     
     >{children}</AppContext.Provider>
 }

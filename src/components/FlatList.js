@@ -16,27 +16,26 @@ const FlatList = () => {
             <Carousel dynamicHeight={false} showIndicators={false} showStatus={false} showArrows={false} centerSlidePercentage={80} centerMode={true} autoPlay={true} infiniteLoop={true} showThumbs={false} swipeable={true}> 
             <div>
                  <img src={png3} alt='info'/>
-                    <p className="legend">Legend 1</p>
+                   
                 </div>
                 <div>
                     <img src={png4} alt='info'/>
-                    <p className="legend">Legend 1</p>
+                   
                 </div>
                 <div>
                     <img src={png5} alt='info'/>
-                    <p className="legend">Legend 1</p>
+                   
                 </div>
                 <div>
                     <img src={png6} alt='info'/>
-                    <p className="legend">Legend 1</p>
                 </div>
                 <div>
                     <img src={png1} alt='info'/>
-                    <p className="legend">Summer sales</p>
+                   
                 </div>
                 <div>
                     <img src={png2} alt='info'/>
-                    <p className="legend">Legend 1</p>
+                   
                 </div>
             </Carousel>
         </div>

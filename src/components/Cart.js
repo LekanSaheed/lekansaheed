@@ -5,15 +5,15 @@ import {Link} from 'react-router-dom'
 import Tag from './Tag'
 
 const Cart = () => {
-    
     const {state, removeItem, clearAllItems, increment, decrement} = GlobalContext()
     const totalPrice = state.cart.reduce((sum, product) => sum + product.quantity * product.price, 0)
     return (
        
         <div className='cart-container'>
              <Tag text='MY CART' bc='royalblue'/>
-            {state.cart.length < 1 ?<div><h1>No item in cart</h1> <Link to='/'><p className='start-buying'> START BUYING</p></Link></div> : state.cart.map((items, index) => {
-                // items.quantity = 0
+            {state.cart.length < 1 ?<div><h1>No item in cart</h1> <Link to='/'><p className='start-buying'> 
+            START BUYING</p></Link></div> : state.cart.map((items, index) => {
+
                 return(
                     
                     <div key={index } className='cart-product'>
@@ -49,7 +49,7 @@ const Cart = () => {
       {state.cart.length > 0 &&   <div style={{display: "flex", justifyContent: 'space-between', alignItems: 'center', marginBottom: '70px', borderBottom: ' solid 2px black'}}> <div style={{fontSize: '18px', fontWeight: 'bold'}}>Total:</div><p className='total-price'>${totalPrice}</p></div>
 }
 
-        {state.cart.length > 0 && <Link to='/process-order-payment' ><div className='checkout-btn'>CHECKOUT</div></Link>}
+        {state.cart.length > 0 &&  <Link to={`${state.isLoggedIn ? '/process-order-payment' : '/login'}`} ><div className='checkout-btn'> CHECKOUT</div></Link>}
         </div>
     )
 }
