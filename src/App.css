@@ -35,6 +35,20 @@ body{
   font-weight: bolder;
   font-size: 17px;
 }
+
+body::-webkit-file-upload-button{
+  background-color: yellowgreen;
+}
+body::-webkit-scrollbar{
+  width: 1em;
+  background: linear-gradient(40deg, royalblue, rgb(238, 67, 96));
+}
+body::-webkit-scrollbar-thumb{
+  background-color: lightblue;
+  box-shadow: inset 0 0 6px rgba(0,0,0, .3);
+  margin: 10px;
+  border-radius: 50px;
+}
 @media(min-width:901px){
   .nav_and_flatlist{
     display: grid;

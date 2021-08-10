@@ -19,7 +19,8 @@ import Account from './components/Account'
 import Logout from './components/Logout'
 import SignUp from './components/SignUp'
 import Footer from './components/Footer'
-
+import Partners from './components/Partners'
+import About from './components/About'
 const App = () => {
 
   const [winwid, setWinwidth] = React.useState(null)
@@ -35,6 +36,7 @@ const checkWidth = () => {
 }
 
   window.addEventListener('resize', (checkWidth))
+  console.log(winwid)
   return (
  
     <>
@@ -52,6 +54,8 @@ const checkWidth = () => {
        </div>
        <Tag text={'Phones'}/>
     <Products/>
+    <About/>
+    <Partners/>
     </Route>
 
     <Route path='/cart'>
@@ -59,8 +63,9 @@ const checkWidth = () => {
     </Route>
     <Route path='/login'>
     {state.isLoggedIn ? <Redirect to='/account'/> : <Login/> }
-      
-      
+    </Route>
+    <Route path='/about'>
+      <About/>
     </Route>
     <Route path='/logout'>
         <Logout/>
@@ -70,11 +75,10 @@ const checkWidth = () => {
         <SignUp/>
       </Route>
     <Route path='/admin'>
-      <Login/>
        <Admin/>
     </Route>
     <Route path='/account'>
-    <Account/>
+     {!state.isLoggedIn ? <Redirect to='/login'/> : <Account/>}
     </Route>
     <Route path='/process-order-payment'>
        <PaystackPay/>

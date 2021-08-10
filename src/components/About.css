@@ -1,0 +1,10 @@
+.about-container{
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    min-height: 80vh;
+}
+.about-container img{
+    width: 100%;
+    height: auto;
+}

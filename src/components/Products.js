@@ -24,7 +24,7 @@ const phoneProduct = state.products.map((items, index) => {
                           
                           <li>{items.item}<br/>
                          ${items.price}<br/></li>
-q                        {items.quantity}
+                       {items.quantity}
                       
                       </div>}
           </div>
@@ -52,7 +52,23 @@ q                        {items.quantity}
 <Link to='/'><div className='category_node'><i className="bi bi-headset-vr"></i><span className='category_title'>Gadgets</span></div></Link>
 <Link to='/'><div className='category_node'><i className="bi bi-window-dock"></i><span className='category_title'>Home Appliances</span></div></Link>
         </div>
-        </>
+
+
+<Tag bc='skyblue' text='Brand'/>
+ <div className='product_container'>
+{state.isLoading ? <><MyLoader/> <MyLoader/> <MyLoader/></> :
+ phoneProduct
+}
+</div>
+
+
+<Tag bc='pink' text='Price'/>
+ <div className='product_container'>
+{state.isLoading ? <><MyLoader/> <MyLoader/> <MyLoader/></> :
+ phoneProduct
+}
+</div>
+ </>
     )
 }
 

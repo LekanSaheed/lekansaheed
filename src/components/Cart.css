@@ -19,6 +19,7 @@
     padding: 10px;
     width: 100%;
     overflow: hidden;
+    min-height: 70vh;
     margin-top: 10px;
 }
 .cart-container img{
